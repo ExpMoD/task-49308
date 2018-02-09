@@ -6,7 +6,7 @@
  * Time: 8:18
  */
 
-function declOfNum($number, $fields)
+function declOfNum($number, $fields, $showNumber)
 {
     $cases = array (2, 0, 1, 1, 1, 2);
     $mod = $number % 100;
@@ -14,9 +14,8 @@ function declOfNum($number, $fields)
 
     $return = $fields[$suffixKey];
 
-    $return = $number . " " . $return;
+    if ($showNumber)
+        $return = $number . " " . $return;
 
     return $return;
 }
-
-echo declOfNum(1, ['элемент', 'элемента', 'элементов']);
