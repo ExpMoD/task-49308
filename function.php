@@ -6,10 +6,8 @@
  * Time: 8:18
  */
 
-function declOfNum($number, $one, $two, $three)
+function declOfNum($number, $fields)
 {
-    $fields = array($one, $two, $three);
-
     $cases = array (2, 0, 1, 1, 1, 2);
     $mod = $number % 100;
     $suffixKey = ($mod > 7 && $mod < 20) ? 2: $cases[min($mod % 10, 5)];
@@ -20,3 +18,5 @@ function declOfNum($number, $one, $two, $three)
 
     return $return;
 }
+
+echo declOfNum(1, ['элемент', 'элемента', 'элементов']);
