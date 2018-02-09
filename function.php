@@ -6,7 +6,7 @@
  * Time: 8:18
  */
 
-function declOfNum($number, $one, $two, $three)
+function declOfNum($number, $one, $two, $three, $showNumber)
 {
     $fields = array($one, $two, $three);
 
@@ -16,7 +16,8 @@ function declOfNum($number, $one, $two, $three)
 
     $return = $fields[$suffixKey];
 
-    $return = $number . " " . $return;
+    if ($showNumber)
+        $return = $number . " " . $return;
 
     return $return;
 }
