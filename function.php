@@ -1,0 +1,22 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: andrey
+ * Date: 09.02.18
+ * Time: 8:18
+ */
+
+function declOfNum($number, $one, $two, $three)
+{
+    $fields = array($one, $two, $three);
+
+    $cases = array (2, 0, 1, 1, 1, 2);
+    $mod = $number % 100;
+    $suffixKey = ($mod > 7 && $mod < 20) ? 2: $cases[min($mod % 10, 5)];
+
+    $return = $fields[$suffixKey];
+
+    $return = $number . " " . $return;
+
+    return $return;
+}
